@@ -15,7 +15,6 @@ const showAlert = (message) => {
   };
   
   showAlert('Щоб пройти гру вам потрібно все вкачати до 10 рівня');
-  
 let clickCount = 0;
 let fasterClicksCost = 10;
 let moreClicksCost = 50;
@@ -92,15 +91,15 @@ autoClickerButton.addEventListener('click', () => {
 });
 
 function checkGameEnd() {
-  if (
-    fasterClicksLevel >= 10 &&
-    moreClicksLevel >= 10 &&
-    autoClickerLevel >= 10
-  ) {
-    alert('Ви пройшли гру!');
-    resetGame();
+    if (
+      fasterClicksLevel >= 10 &&
+      moreClicksLevel >= 10 &&
+      autoClickerLevel >= 10
+    ) {
+      gameComplete(); // Call the gameComplete function instead of alert
+      resetGame();
+    }
   }
-}
 
 function resetGame() {
   clickCount = 0;
@@ -129,4 +128,23 @@ colorPickerButton.addEventListener('click', () => {
   document.body.style.backgroundColor = color;
 });
 
-resetGame();
+
+const showPopup = (message) => {
+    const popupOverlay = document.createElement('div');
+    popupOverlay.classList.add('alert-overlay');
+  
+    const popupBox = document.createElement('div');
+    popupBox.classList.add('alert-box');
+    popupBox.textContent = message;
+  
+    popupOverlay.appendChild(popupBox);
+    document.body.appendChild(popupOverlay);
+  };
+  
+  const gameComplete = () => {
+    showPopup('Ви пройшли гру!');
+  
+    // Reset the game or perform other actions
+  };
+  
+  resetGame();
