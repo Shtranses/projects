@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Clicker Game</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div id="clicker">Click Me!</div>
+<head>
+  <meta charset="UTF-8">
+  <title>Clicker Game</title>
+  <link rel="stylesheet" href="style/style.css">
+</head> 
+<body>
+  <div class="container">
+    <h1>Clicker Game</h1>
+    <div id="clicker"><img class="mouse" src="style/photo/cry-nnezumi.png" alt="mouse"></div>
     <div id="clicks">Clicks: <span id="click-count">0</span></div>
     <div id="upgrades">
       <h2>Upgrades</h2>
@@ -26,6 +28,14 @@
         <button id="auto-clicker">Buy</button>
       </div>
     </div>
-    <script src="script.js"></script>
-  </body>
+    <div id="backgrounds">
+      <h2>Backgrounds</h2>
+      <div class="background">
+        <input type="color" id="color-picker">
+        <button class="background-option" id="color-picker-button">Set Color</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
 </html>
