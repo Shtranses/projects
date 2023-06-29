@@ -96,7 +96,7 @@ function checkGameEnd() {
       moreClicksLevel >= 10 &&
       autoClickerLevel >= 10
     ) {
-      gameComplete(); // Call the gameComplete function instead of alert
+      gameComplete();
       resetGame();
     }
   }
@@ -143,8 +143,6 @@ const showPopup = (message) => {
   
   const gameComplete = () => {
     showPopup('Ви пройшли гру!');
-  
-    // Reset the game or perform other actions
   };
   
   resetGame();
